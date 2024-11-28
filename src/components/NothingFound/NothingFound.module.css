@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .contentWrapper {
+    background-color: rgba(245, 246, 247, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 83px 80px;
+  }
+  
+  @media (max-width: 991px) {
+    .contentWrapper {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .messageContainer {
+    display: flex;
+    width: 213px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .notFoundIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 83px;
+  }
+  
+  .title {
+    color: var(--main-primary, #1a1b22);
+    margin-top: 31px;
+    font: 26px/1 Roboto Slab, sans-serif;
+  }
+  
+  .description {
+    color: var(--simulator-gray-text, #b6bcbf);
+    align-self: stretch;
+    margin-top: 16px;
+    font: 18px/24px Roboto, sans-serif;
+  }
