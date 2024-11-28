@@ -2,13 +2,14 @@
   background: #fff;
   display: flex;
   flex-direction: column;
-  position: relative; /* Ensure the notification can be positioned relative to this */
+  position: relative;
+  border-radius:15px ;
 }
 
 .cardImage {
   aspect-ratio: 1.49;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover; /* Ensure full coverage */
 }
 
 .cardContent {
@@ -19,13 +20,13 @@
 }
 
 .date {
-  font: 18px/1;
+  font: 18px/24px;
   color: #b6bcbf;
 }
 
 .title {
   color: #1a1b22;
-  font: 22px/24px;
+  font: 26px/30px;
 }
 
 .description {
@@ -35,17 +36,18 @@
 
 .source {
   color: #b6bcbf;
-  font: 700 16px/1;
+  font: 700 16px/20px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
 .save {
   border: none;
-  background: transparent;
-  align-items: flex-end;
-  text-align: right;
-  margin-right: 23px;
+  position: absolute;
+  right: 0px;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 10px;
   cursor: pointer;
 }
 
@@ -62,6 +64,5 @@
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  width: auto;
   max-width: 300px;
 }

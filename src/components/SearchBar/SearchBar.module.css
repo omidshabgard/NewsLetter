@@ -1,39 +1,104 @@
 .searchContainer {
-    display: flex;
-    width: 448px;
-    max-width: 100%;
-    border-radius: 100px;
-    background: #fff;
-    border: 1px solid #d1d2d6;
-    padding-left: 24px;
+  display: flex;
+  width: 448px;
+  max-width: 100%;
+  border-radius: 100px;
+  background: #fff;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.inputWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  background: #fff;
+  border: 1px solid #d1d2d6;
+  padding-left: 16px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none; /* Fixes cursor visibility issue */
+  color: #333; /* Improve contrast for readability */
+  font: 16px/1 sans-serif;
+  padding: 12px 0;
+}
+
+.searchInput::placeholder {
+  color: #b6bcbf;
+  font-style: italic; /* Subtle styling for placeholder */
+}
+
+.searchButton {
+  border-radius: 100px;
+  background: #2f71e5;
+  color: #fff;
+  font: 500 16px sans-serif;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 8px; /* Adds spacing between input and button */
+}
+
+.searchButton:hover {
+  background-color: #174cbd; /* Darker shade for hover */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .searchContainer {
+    width: 100%; /* Adjust width to fit smaller screens */
   }
+
   
-  .searchInput {
-    flex: 1;
-    border: none;
-    color: #b6bcbf;
-    font: 16px/1 ;
-    padding: 16px 0;
-  }
-  
+
   .searchButton {
-    border-radius: 100px;
-    background: #2f71e5;
-    color: #fff;
-    font: 500 18px/1 ;
-    padding: 16px 52px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .searchContainer {
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: stretch;
+    background-color: transparent;
     border: none;
-    box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
-    cursor: pointer;
+
   }
-  
-  @media (max-width: 991px) {
-    .searchContainer {
-      padding-left: 20px;
-      margin-top: 40px;
-    }
-    
-    .searchButton {
-      padding: 16px 20px;
-    }
+
+  .inputWrapper {
+    border-radius: 100px;
+    padding-left: 12px;
   }
+
+  .searchInput {
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .searchButton {
+    margin-left: 0;
+    margin-top: 8px; /* Space between input and button */
+    padding: 12px;
+    width: 100%; /* Ensure the button takes the full width */
+    text-align: center;
+  }
+}

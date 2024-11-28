@@ -6,6 +6,7 @@ import {
 } from '../../utils/ThirdPartyApi';
 import NewsCard from '../../components/NewsCard/NewsCards';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import NothingFound from '../../components/NothingFound/NothingFound'; // Import the NothingFound component
 import styles from './LandingPage.module.css';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -28,7 +29,8 @@ const LandingPage = () => {
 				setNewsData(data);
 				saveToLocalStorage('newsData', data);
 			} else {
-				setError('Nothing found');
+				setNewsData([]); // Explicitly set newsData to an empty array if no data
+				setError(null); // Clear error state in case of no results
 			}
 		} catch (err) {
 			setError(err.message);
@@ -53,8 +55,12 @@ const LandingPage = () => {
 		setNewsData([]);
 		setShowCount(3);
 		fetchNews(newQuery);
+		// Simulate a 2-second delay for the preloader
+ setTimeout(() => {
+	
+}, 2000);
 	};
-
+ 
 	const loadMore = () => {
 		setShowCount((prevCount) => prevCount + 3);
 	};
@@ -65,25 +71,34 @@ const LandingPage = () => {
 				<img src={image} alt='' className={styles.headerBackground} />
 				<NavBar />
 				<section className={styles.hero}>
+					<div>
 					<h2 className={styles.heroTitle}>
-						What's going on in the world?
+						What's going on in<br/> the world?
 					</h2>
 					<p className={styles.heroDescription}>
-						Find the latest news on any topic and save them in your
-						personal account.
+						Find the latest news on any topic and save them in your personal account.
 					</p>
+					</div>
+					
 					<SearchBar onSearch={handleSearch} />
 				</section>
 			</header>
 
-			<section className={styles.results}>
-				<h2 className={styles.resultsTitle}>Search results</h2>
+			{/* <section className={styles.results}>
 				{loading ? (
-					<div className={styles.circlePreloader}></div>
+					<div className={styles.circlePreloader }>
+
+					</div>
 				) : error ? (
 					<p className={styles.error}>{error}</p>
+				) : newsData.length === 0 ? (
+					<NothingFound /> 
 				) : (
+					<div>
+				<h2 className={styles.resultsTitle}>Search results</h2>
+
 					<div className={styles.newsGrid}>
+					
 						{(newsData || [])
 							.slice(0, showCount)
 							.map((news, index) => (
@@ -104,6 +119,9 @@ const LandingPage = () => {
 								/>
 							))}
 					</div>
+						</div>
+					
+				
 				)}
 
 				{!loading && !error && newsData.length > showCount && (
@@ -112,24 +130,66 @@ const LandingPage = () => {
 					</button>
 				)}
 			</section>
+			 */}
+<section className={styles.results}>
+  {error ? (
+    <NothingFound />
+  ) : loading ? (
+    <div className={styles.circlePreloader}></div>
+  ) : newsData.length === 0 ? (
+    <NothingFound />
+  ) : (
+    <div>
+      <h2 className={styles.resultsTitle}>Search results</h2>
+      <div className={styles.newsGrid}>
+        {(newsData || [])
+          .slice(0, showCount)
+          .map((news, index) => (
+            <NewsCard
+              key={index}
+              date={news.dateTime || 'No Date Available'}
+              title={news.title || 'No Title Available'}
+              description={
+                news.body?.length > 150
+                  ? `${news.body.slice(0, 150)}...`
+                  : news.body || 'No Description'
+              }
+              source={news.source || 'Unknown Source'}
+              image={
+                news.image || 'https://via.placeholder.com/150'
+              }
+            />
+          ))}
+      </div>
+    </div>
+  )}
 
-			<section className={styles.author}>
-				<img src={image2} alt='Author' className={styles.authorImage} />
-				<div className={styles.authorContent}>
-					<h2 className={styles.authorTitle}>About the author</h2>
-					<p className={styles.authorDescription}>
-						This block describes the project author. Here you should
-						indicate your name, what you do, and which development
-						technologies you know.
-						<br />
-						<br />
-						You can also talk about your experience with TripleTen,
-						what you learned there, and how you can help potential
-						customers.
-					</p>
-				</div>
-			</section>
+  {!loading && !error && newsData.length > showCount && (
+    <button onClick={loadMore} className={styles.showMore}>
+      Show more
+    </button>
+  )}
+</section>
 
+
+<section className={styles.author}>
+  <div>
+    <img src={image2} alt='Author' className={styles.authorImage} />
+  </div>
+  <div className={styles.authorContent}>
+    <h2 className={styles.authorTitle}>About the author</h2>
+    <p className={styles.authorDescription}>
+      This block describes the project author. Here you should
+      indicate your name, what you do, and which development
+      technologies you know.
+      <br />
+      <br />
+      You can also talk about your experience with TripleTen,
+      what you learned there, and how you can help potential
+      customers.
+    </p>
+  </div>
+</section>
 			<Footer />
 		</main>
 	);

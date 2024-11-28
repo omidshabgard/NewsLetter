@@ -13,17 +13,23 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <form className={styles.searchContainer} onSubmit={handleSubmit}>
-      <label htmlFor="searchInput" className="visually-hidden">Search news</label>
-      <input
-        type="text"
-        id="searchInput"
-        className={styles.searchInput}
-        placeholder="Yellowstone"
-        aria-label="Search news"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button type="submit" className={styles.searchButton}>Search</button>
+      <label htmlFor="searchInput" className={styles.visuallyHidden}>
+        Search news
+      </label>
+      <div className={styles.inputWrapper}>
+        <input
+          type="text"
+          id="searchInput"
+          className={styles.searchInput}
+          placeholder="Search news..."
+          aria-label="Search news"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <button type="submit" className={styles.searchButton}>
+        Search
+      </button>
     </form>
   );
 };

@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 14px 40px;
+    border-bottom: 0.5px solid white;
   }
   
   .logo {
@@ -12,6 +13,7 @@
   }
   
   .navLinks {
+    margin-bottom: -28px;
     display: flex;
     gap: 19px;
     align-items: center;
@@ -30,8 +32,26 @@
     text-decoration: none;
     font: 500 16px ;
   }
+
+  /* Add border-bottom and bold styling for active links */
+.navLink {
+  text-decoration: none;
+  font: 500 16px; /* Default font weight for inactive links */
+  color: black;
+  padding-bottom: 32px; /* Space for the border */
+  transition: all 0.3s ease; /* Smooth transition for hover or active state */
+  /* padding-bottom: 20px; */
+}
+
+.navLink.active {
+  font-weight: 700; /* Bold text for active links */
+  border-bottom: 3px solid white; /* Thick border for active links */
+  color: white;
+}
+
   
   .signInButton {
+    margin-bottom: 28px;
     border-radius: 100px;
     border: 1px solid #fff;
     background: transparent;
@@ -61,7 +81,6 @@
     border-radius: 8px;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
   }
   
@@ -72,7 +91,7 @@
     background: none;
     border: none;
     font-size: 20px;
-    color: #333;
+    color: white;
     cursor: pointer;
   }
   
@@ -80,4 +99,60 @@
   .popupOverlay.active {
     display: flex;
   }
-  
+  /* Mobile Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1;
+      background: black;
+      width: -webkit-fill-available;
+      padding: 20px;
+  }
+
+  .navLinks.open {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+}
+
+/* Active states */
+.navigation.home {
+  background: transparent;
+}
+
+.navigation.saved-articles {
+  background: white;
+}
+
+.navigation.home .navLink,
+.navigation.home .signInButton {
+  color: white;
+  border-color: white;
+}
+
+.navigation.saved-articles .navLink,
+.navigation.saved-articles .signInButton {
+  color: black;
+  border-color: black;
+}
