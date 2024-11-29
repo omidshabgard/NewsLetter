@@ -1,158 +1,152 @@
-
 .navigation {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 40px;
-    border-bottom: 0.5px solid white;
-  }
-  
-  .logo {
-    font: 700 20px/1.2 'Roboto Slab', sans-serif;
-  }
-  
-  .navLinks {
-    margin-bottom: -28px;
-    display: flex;
-    gap: 19px;
-    align-items: center;
-  }
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 40px;
+	border-bottom: 0.5px solid white;
+}
 
+.logo {
+	font: 700 20px/1.2 'Roboto Slab', sans-serif;
+}
+
+.navLinks {
+	margin-bottom: -28px;
+	display: flex;
+	gap: 19px;
+	align-items: center;
+}
 
 .active {
-    color: white;
-  }
-  
-  .inactive {
-    color: black;
-  }
-  
-  .navLink {
-    text-decoration: none;
-    font: 500 16px ;
-  }
+	color: white;
+}
 
-  /* Add border-bottom and bold styling for active links */
+.inactive {
+	color: black;
+}
+
 .navLink {
-  text-decoration: none;
-  font: 500 16px; /* Default font weight for inactive links */
-  color: black;
-  padding-bottom: 32px; /* Space for the border */
-  transition: all 0.3s ease; /* Smooth transition for hover or active state */
-  /* padding-bottom: 20px; */
+	text-decoration: none;
+	font: 500 16px;
+}
+
+.navLink {
+	text-decoration: none;
+	font: 500 16px;
+	color: black;
+	padding-bottom: 32px;
+	transition: all 0.3s ease;
 }
 
 .navLink.active {
-  font-weight: 700; /* Bold text for active links */
-  border-bottom: 3px solid white; /* Thick border for active links */
-  color: white;
+	font-weight: 700;
+	border-bottom: 3px solid white;
+	color: white;
 }
 
-  
-  .signInButton {
-    margin-bottom: 28px;
-    border-radius: 100px;
-    border: 1px solid #fff;
-    background: transparent;
-    padding: 13px 52px;
-    font: 500 16px ;
-    cursor: pointer;
-  }
-  
-  /* Popup background */
+.signInButton {
+	margin-bottom: 28px;
+	border-radius: 100px;
+	border: 1px solid #fff;
+	background: transparent;
+	padding: 13px 52px;
+	font: 500 16px;
+	cursor: pointer;
+}
+
+/* Popup background */
 .popupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* semi-transparent background */
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Ensure it's on top */
-  }
-  
-  /* Popup window */
-  .popupContent {
-    background-color:transparent;
-    padding: 40px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 100%;
-    position: relative;
-  }
-  
-  .popupClose {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* When the popup is active, display it */
-  .popupOverlay.active {
-    display: flex;
-  }
-  /* Mobile Menu */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+/* Popup window */
+.popupContent {
+	background-color: transparent;
+	padding: 40px;
+	border-radius: 8px;
+	max-width: 500px;
+	width: 100%;
+	position: relative;
+}
+
+.popupClose {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+}
+
+.popupOverlay.active {
+	display: flex;
+}
+/* Mobile Menu */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: background-color 0.3s ease;
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	transition: background-color 0.3s ease;
 }
 
 @media (max-width: 768px) {
-  .navLinks {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      z-index: 1;
-      background: black;
-      width: -webkit-fill-available;
-      padding: 20px;
-  }
+	.navLinks {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		z-index: 1;
+		background: black;
+		width: -webkit-fill-available;
+		padding: 20px;
+	}
 
-  .navLinks.open {
-      display: flex;
-  }
+	.navLinks.open {
+		display: flex;
+	}
 
-  .hamburger {
-      display: flex;
-  }
+	.hamburger {
+		display: flex;
+	}
 }
 
 /* Active states */
 .navigation.home {
-  background: transparent;
+	background: transparent;
 }
 
 .navigation.saved-articles {
-  background: white;
+	background: white;
 }
 
 .navigation.home .navLink,
 .navigation.home .signInButton {
-  color: white;
-  border-color: white;
+	color: white;
+	border-color: white;
 }
 
 .navigation.saved-articles .navLink,
 .navigation.saved-articles .signInButton {
-  color: black;
-  border-color: black;
+	color: black;
+	border-color: black;
 }

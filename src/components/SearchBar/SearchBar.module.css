@@ -21,15 +21,15 @@
 .searchInput {
   flex: 1;
   border: none;
-  outline: none; /* Fixes cursor visibility issue */
-  color: #333; /* Improve contrast for readability */
+  outline: none; 
+  color: #333; 
   font: 16px/1 sans-serif;
   padding: 12px 0;
 }
 
 .searchInput::placeholder {
   color: #b6bcbf;
-  font-style: italic; /* Subtle styling for placeholder */
+  font-style: italic; 
 }
 
 .searchButton {
@@ -41,12 +41,12 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 8px; /* Adds spacing between input and button */
+  margin-left: 8px; 
 }
 
 .searchButton:hover {
-  background-color: #174cbd; /* Darker shade for hover */
-  transform: scale(1.05); /* Subtle zoom effect */
+  background-color: #174cbd; 
+  transform: scale(1.05); 
 }
 
 .visuallyHidden {
@@ -63,7 +63,7 @@
 /* Responsive Styles */
 @media (max-width: 991px) {
   .searchContainer {
-    width: 100%; /* Adjust width to fit smaller screens */
+    width: 100%; 
   }
 
   
@@ -76,7 +76,7 @@
 
 @media (max-width: 576px) {
   .searchContainer {
-    flex-direction: column; /* Stack input and button vertically */
+    flex-direction: column; 
     align-items: stretch;
     background-color: transparent;
     border: none;
@@ -96,9 +96,9 @@
 
   .searchButton {
     margin-left: 0;
-    margin-top: 8px; /* Space between input and button */
+    margin-top: 8px; 
     padding: 12px;
-    width: 100%; /* Ensure the button takes the full width */
+    width: 100%; 
     text-align: center;
   }
 }

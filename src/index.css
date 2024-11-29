@@ -5,14 +5,32 @@ body {
     overflow-x: hidden; 
     max-width: 1200px; 
     box-sizing: border-box; 
-    font-family: "Roboto", sans-serif !important;
-    font-weight: 400;
-    font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif; /* Adjust based on Figma font family */
+    font-size: 16px; /* Update to Figma's base font size */
+    line-height: 1.5; /* Update to Figma's line height */
+    font-weight: 400; /* Update to Figma's font weight */
+    font-style: normal; /* Update to Figma's font style */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Ensure consistency */
+    font-weight: bold; /* Adjust based on Figma */
+    line-height: 1.2; /* Update as per Figma's headings line height */
+}
+
+p {
+    font-size: 14px; /* Update to Figma's paragraph font size */
+    line-height: 1.6; /* Update based on Figma specs */
+    margin: 0 0 1em; /* Adjust spacing */
 }
 
 code {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace; /* Use Figma's code font if specified */
+}
 
+a {
+    text-decoration: none;
+    color: inherit; /* Update to Figma's link color */
 }

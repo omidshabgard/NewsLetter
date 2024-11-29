@@ -15,8 +15,8 @@ const NavBar = () => {
     };
 
     const handleLogOutClick = () => {
-        // Here you can clear authentication state or tokens, if applicable
-        alert('Logged out'); // For demonstration purposes
+        
+        alert('Logged out'); 
     };
 
     const closePopup = () => {
