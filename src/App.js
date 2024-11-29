@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "../src/Pages/LandingPage/LandingPage";
 import SavedArticles from "./Pages/SavedArticls/SavedNewsPage";
 import { getFromLocalStorage } from "./utils/ThirdPartyApi";
+import './App.css'; 
 
 function App() {
   const [savedArticles, setSavedArticles] = useState([]);
@@ -19,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="roboto-slab">
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />

@@ -64,11 +64,14 @@ export default function SavedNewsPage() {
                   className={styles.deleteButton}
                   aria-label="Delete article"
                 >
+
                   <img 
                     src={article.deleteIcon} 
                     alt="" 
                     className={styles.deleteIcon}
                   />
+                <span className={styles.tooltip}>Remove from saved</span>
+
                 </button>
               </div>
             </div>

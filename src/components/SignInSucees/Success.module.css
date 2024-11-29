@@ -1,47 +1,84 @@
 .successForm {
-    border-radius: 16px;
-    display: flex;
-    max-width: 430px;
-    flex-direction: column;
+  border-radius: 16px;
+  display: flex;
+  max-width: 430px;
+  flex-direction: column;
+  margin: 0 auto; 
+}
+
+.successCard {
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px 80px 48px 36px;
+}
+
+.successTitle {
+  color: rgba(0, 0, 0, 1);
+  font: 900 24px Roboto, sans-serif;
+}
+
+.signInLink {
+  color: rgba(47, 113, 229, 1);
+  margin-top: 19px;
+  font: 400 18px Inter, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signInLink:hover,
+.signInLink:focus {
+  text-decoration: underline;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .successForm {
+    max-width: 100%; 
+    padding: 0 16px; 
   }
-  
+
   .successCard {
-    border-radius: 16px;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: start;
-    padding: 48px 80px 48px 36px;
+    padding: 36px 48px; 
   }
-  
+
   .successTitle {
-    color: rgba(0, 0, 0, 1);
-    font: 900 24px Roboto, sans-serif;
+    font-size: 20px;
   }
-  
+
   .signInLink {
-    color: rgba(47, 113, 229, 1);
-    margin-top: 19px;
-    font: 400 18px Inter, sans-serif;
-    cursor: pointer;
-    text-decoration: none;
+    font-size: 16px;
   }
-  
-  .signInLink:hover,
-  .signInLink:focus {
-    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .successCard {
+    padding: 20px; 
   }
-  
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+
+  .successTitle {
+    font-size: 18px; 
+    text-align: center; 
   }
+
+  .signInLink {
+    font-size: 14px; 
+    text-align: center; 
+    width: 100%; 
+  }
+}

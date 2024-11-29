@@ -71,7 +71,7 @@ const LandingPage = () => {
 				<img src={image} alt='' className={styles.headerBackground} />
 				<NavBar />
 				<section className={styles.hero}>
-					<div>
+					<div className={styles.content}>
 					<h2 className={styles.heroTitle}>
 						What's going on in<br/> the world?
 					</h2>
@@ -84,53 +84,6 @@ const LandingPage = () => {
 				</section>
 			</header>
 
-			{/* <section className={styles.results}>
-				{loading ? (
-					<div className={styles.circlePreloader }>
-
-					</div>
-				) : error ? (
-					<p className={styles.error}>{error}</p>
-				) : newsData.length === 0 ? (
-					<NothingFound /> 
-				) : (
-					<div>
-				<h2 className={styles.resultsTitle}>Search results</h2>
-
-					<div className={styles.newsGrid}>
-					
-						{(newsData || [])
-							.slice(0, showCount)
-							.map((news, index) => (
-								<NewsCard
-									key={index}
-									date={news.dateTime || 'No Date Available'}
-									title={news.title || 'No Title Available'}
-									description={
-										news.body?.length > 150
-											? `${news.body.slice(0, 150)}...`
-											: news.body || 'No Description'
-									}
-									source={news.source || 'Unknown Source'}
-									image={
-										news.image ||
-										'https://via.placeholder.com/150'
-									}
-								/>
-							))}
-					</div>
-						</div>
-					
-				
-				)}
-
-				{!loading && !error && newsData.length > showCount && (
-					<button onClick={loadMore} className={styles.showMore}>
-						Show more
-					</button>
-				)}
-			</section>
-			 */}
 <section className={styles.results}>
   {error ? (
     <NothingFound />

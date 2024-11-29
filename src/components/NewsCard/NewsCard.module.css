@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  border-radius:15px ;
+  border-radius: 15px;
 }
 
 .cardImage {
   aspect-ratio: 1.49;
   width: 100%;
-  object-fit: cover; /* Ensure full coverage */
+  object-fit: cover; 
 }
 
 .cardContent {
@@ -20,23 +20,32 @@
 }
 
 .date {
-  font: 18px/24px;
+  font-weight: 400; 
+  font-size: 18px;
+  line-height: 24px;
   color: #b6bcbf;
 }
 
 .title {
+  font-weight: 700; 
+  font-size: 26px;
+  line-height: 30px;
   color: #1a1b22;
-  font: 26px/30px;
 }
 
 .description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: Roboto, sans-serif;
   color: #1a1b22;
-  font: 16px/22px Roboto, sans-serif;
 }
 
 .source {
+  font-weight: 700; 
+  font-size: 16px;
+  line-height: 20px;
   color: #b6bcbf;
-  font: 700 16px/20px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
@@ -51,18 +60,27 @@
   cursor: pointer;
 }
 
-.notification {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.save:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-10px); 
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 0%; 
+  right: 110%;
+  transform: translateX(50%);
   background-color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  max-width: 300px;
+  color: black;
+  padding: 17px 10px;
+  font-size: 12px;
+  font-weight: 700; 
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  z-index: 10;
 }

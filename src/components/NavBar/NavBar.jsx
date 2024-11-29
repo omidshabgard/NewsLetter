@@ -15,7 +15,6 @@ const NavBar = () => {
     };
 
     const handleLogOutClick = () => {
-        
         alert('Logged out'); 
     };
 
@@ -37,7 +36,6 @@ const NavBar = () => {
                 <h1 className={styles.logo}>NewsExplorer</h1>
 
                 <div className={styles.hamburger} onClick={toggleMenu}>
-                    <span></span>
                     <span></span>
                     <span></span>
                 </div>
