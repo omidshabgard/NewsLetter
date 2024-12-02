@@ -1,13 +1,17 @@
 body {
-    margin: 0 auto; 
-    background: #fff;
-    padding: 0 16px; 
-    overflow-x: hidden; 
-    max-width: 1200px; 
-    box-sizing: border-box; 
-    font-style: normal;
+  margin: 0 auto; 
+  background: #fff;
+  padding: 0 16px; 
+  overflow-x: hidden; 
+  max-width: 1200px; 
+  box-sizing: border-box; 
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+@media (max-width: 600px) {
+  body {
+      padding: 0; /* Remove padding for small mobile screens */
+  }
+}

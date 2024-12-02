@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="roboto-slab">
       <Router>
+       
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route

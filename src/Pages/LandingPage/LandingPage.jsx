@@ -79,7 +79,6 @@ const LandingPage = () => {
 						Find the latest news on any topic and save them in your personal account.
 					</p>
 					</div>
-					
 					<SearchBar onSearch={handleSearch} />
 				</section>
 			</header>

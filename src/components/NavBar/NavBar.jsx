@@ -29,9 +29,10 @@ const NavBar = () => {
     return (
         <div>
             <nav
-                className={`${styles.navigation} ${
-                    isHome ? styles.home : styles['saved-articles']
-                }`}
+
+className={`${styles.navigation} ${
+    isHome ? styles.home : styles['saved-articles']
+} ${isMenuOpen ? styles.menuOpen : ''}`} 
             >
                 <h1 className={styles.logo}>NewsExplorer</h1>
 

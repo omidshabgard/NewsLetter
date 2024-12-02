@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   background: #fff;
-  padding: 0 16px; 
+  /* padding: 0 16px;  */
   overflow-x: hidden; 
 }
 
@@ -80,6 +80,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  font-family: "Inter";
   text-align: left;
 }
 
@@ -175,6 +176,8 @@
 }
 
 @media (min-width: 768px) {
+
+  
   .author {
     flex-direction: row;
     align-items: center;
@@ -212,13 +215,7 @@
 }
 
 @media (max-width: 991px) {
-  .navigation,
-  .hero,
-  .results,
-  .author,
-  .footer {
-    padding: 16px;
-  }
+  
 
   .newsGrid {
     grid-template-columns: 1fr;
