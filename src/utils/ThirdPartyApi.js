@@ -1,5 +1,5 @@
 const API_URL = 'https://eventregistry.org/api/v1/article/getArticles';
-const API_KEY = '96fc2acf-a8a9-4b69-8808-00ce4f8bf5ea'; // Replace with your API key
+const API_KEY = '96fc2acf-a8a9-4b69-8808-00ce4f8bf5ea';
 
 export const fetchNewsData = async (query) => {
 	const params = new URLSearchParams({

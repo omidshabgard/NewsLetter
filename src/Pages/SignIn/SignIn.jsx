@@ -7,16 +7,16 @@ import { Success } from '../../components/SignInSucees/Success';
 
 const SignIn = () => {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(true); // Track popup visibility
-  const [isSuccess, setIsSuccess] = useState(false); // Track success message visibility
+  const [isPopupVisible, setIsPopupVisible] = useState(true); 
+  const [isSuccess, setIsSuccess] = useState(false); 
 
   const toggleSignUp = () => setIsSignUp((prev) => !prev);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // If it's Sign Up, show the success message and hide the form (popup)
+   
     setIsSuccess(true);
-    setIsPopupVisible(false); // Hide the form/popup when the user clicks "Sign in"
+    setIsPopupVisible(false); 
   };
 
   return (

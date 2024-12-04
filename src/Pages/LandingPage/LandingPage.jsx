@@ -6,7 +6,7 @@ import {
 } from '../../utils/ThirdPartyApi';
 import NewsCard from '../../components/NewsCard/NewsCards';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import NothingFound from '../../components/NothingFound/NothingFound'; // Import the NothingFound component
+import NothingFound from '../../components/NothingFound/NothingFound'; 
 import styles from './LandingPage.module.css';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -29,8 +29,8 @@ const LandingPage = () => {
 				setNewsData(data);
 				saveToLocalStorage('newsData', data);
 			} else {
-				setNewsData([]); // Explicitly set newsData to an empty array if no data
-				setError(null); // Clear error state in case of no results
+				setNewsData([]); 
+				setError(null); 
 			}
 		} catch (err) {
 			setError(err.message);
@@ -55,7 +55,7 @@ const LandingPage = () => {
 		setNewsData([]);
 		setShowCount(3);
 		fetchNews(newQuery);
-		// Simulate a 2-second delay for the preloader
+		
  setTimeout(() => {
 	
 }, 2000);
