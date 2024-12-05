@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "../src/Pages/LandingPage/LandingPage";
-import SavedArticles from "./Pages/SavedArticls/SavedNewsPage";
+import LandingPage from "../src/components/LandingPage/LandingPage";
+import SavedArticles from "./components/SavedArticls/SavedNewsPage";
 import { getFromLocalStorage } from "./utils/ThirdPartyApi";
 import './App.css'; 
 

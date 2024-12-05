@@ -66,26 +66,20 @@ const LandingPage = () => {
 	return (
 		<main className={styles.container}>
 			<header className={styles.header}>
-				<img
-					src={image}
-					alt='Landing page background'
-					className={styles.headerBackground}
-				/>
+				<img src={image} alt='' className={styles.headerBackground} />
 				<NavBar />
 				<section className={styles.hero}>
-					<div className={styles.heroContent}>
-						<h1 className={styles.heroTitle}>
+					<div className={styles.content}>
+						<h2 className={styles.heroTitle}>
 							What's going on in
 							<br /> the world?
-						</h1>
+						</h2>
 						<p className={styles.heroDescription}>
 							Find the latest news on any topic and save them in
 							your personal account.
 						</p>
 					</div>
-					<div className={styles.searchBar}>
-						<SearchBar onSearch={handleSearch} />
-					</div>
+					<SearchBar onSearch={handleSearch} />
 				</section>
 			</header>
 
@@ -93,50 +87,41 @@ const LandingPage = () => {
 				{error ? (
 					<NothingFound />
 				) : loading ? (
-					<div
-						className={styles.circlePreloader}
-						aria-label='Loading...'
-					></div>
+					<div className={styles.circlePreloader}></div>
 				) : newsData.length === 0 ? (
 					<NothingFound />
 				) : (
-					<section>
+					<div>
 						<h2 className={styles.resultsTitle}>Search results</h2>
-						<ul className={styles.newsGrid}>
+						<div className={styles.newsGrid}>
 							{(newsData || [])
 								.slice(0, showCount)
 								.map((news, index) => (
-									<li key={index}>
-										<NewsCard
-											date={
-												news.dateTime ||
-												'No Date Available'
-											}
-											title={
-												news.title ||
-												'No Title Available'
-											}
-											description={
-												news.body?.length > 150
-													? `${news.body.slice(
-															0,
-															150
-													  )}...`
-													: news.body ||
-													  'No Description'
-											}
-											source={
-												news.source || 'Unknown Source'
-											}
-											image={
-												news.image ||
-												'https://via.placeholder.com/150'
-											}
-										/>
-									</li>
+									<NewsCard
+										key={index}
+										date={
+											news.dateTime || 'No Date Available'
+										}
+										title={
+											news.title || 'No Title Available'
+										}
+										description={
+											news.body?.length > 150
+												? `${news.body.slice(
+														0,
+														150
+												  )}...`
+												: news.body || 'No Description'
+										}
+										source={news.source || 'Unknown Source'}
+										image={
+											news.image ||
+											'https://via.placeholder.com/150'
+										}
+									/>
 								))}
-						</ul>
-					</section>
+						</div>
+					</div>
 				)}
 
 				{!loading && !error && newsData.length > showCount && (
@@ -147,28 +132,27 @@ const LandingPage = () => {
 			</section>
 
 			<section className={styles.author}>
-				<figure>
+				<div>
 					<img
 						src={image2}
 						alt='Author'
 						className={styles.authorImage}
 					/>
-					<figcaption className={styles.authorCaption}>
-						<h2 className={styles.authorTitle}>About the author</h2>
-						<p className={styles.authorDescription}>
-							This block describes the project author. Here you
-							should indicate your name, what you do, and which
-							development technologies you know.
-						</p>
-						<p className={styles.authorDescription}>
-							You can also talk about your experience with
-							TripleTen, what you learned there, and how you can
-							help potential customers.
-						</p>
-					</figcaption>
-				</figure>
+				</div>
+				<div className={styles.authorContent}>
+					<h2 className={styles.authorTitle}>About the author</h2>
+					<p className={styles.authorDescription}>
+						This block describes the project author. Here you should
+						indicate your name, what you do, and which development
+						technologies you know.
+						<br />
+						<br />
+						You can also talk about your experience with TripleTen,
+						what you learned there, and how you can help potential
+						customers.
+					</p>
+				</div>
 			</section>
-
 			<Footer />
 		</main>
 	);
