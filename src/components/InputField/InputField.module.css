@@ -23,3 +23,14 @@
     margin: 11px 0 0;
     border: 1px solid #000;
   }
+
+  .inputError {
+    border-color: red;
+  }
+  
+  .errorText {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
