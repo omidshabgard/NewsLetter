@@ -1,15 +1,23 @@
+
+
 .card {
   background: #fff;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 15px;
+  width: 100%;
+  min-height: 400px; 
+  max-height: 500px; 
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cardImage {
   aspect-ratio: 1.49;
   width: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+  height: 200px; 
 }
 
 .cardContent {
@@ -17,38 +25,51 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.date {
-  font-weight: 400; 
-  font-size: 18px;
-  line-height: 24px;
-  color: #b6bcbf;
-}
-
-.title {
-  font-weight: 700; 
-  font-size: 26px;
-  line-height: 30px;
-  color: #1a1b22;
+  flex: 1; 
+  overflow-y: auto;
 }
 
 .description {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #1a1b22;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}
+.date {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
 }
 
+.title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1a1b22;
+  text-overflow: ellipsis; 
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+
 .source {
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #b6bcbf;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
+
+
 
 .save {
   border: none;

@@ -1,6 +1,13 @@
 import React from 'react';
 import styles from './NewsCard.module.css';
 
+const truncateText = (text, wordLimit) => {
+  const words = text.split(' ');
+  return words.length > wordLimit
+    ? `${words.slice(0, wordLimit).join(' ')}...`
+    : text;
+};
+
 const NewsCards = ({ date, title, description, source, image, isSignedIn }) => {
   return (
     <article className={styles.card}>
@@ -26,9 +33,8 @@ const NewsCards = ({ date, title, description, source, image, isSignedIn }) => {
 
       <div className={styles.cardContent}>
         <time className={styles.date}>{new Date(date).toLocaleDateString()}</time>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
-
+        <h3 className={styles.title}>{truncateText(title, 5)}</h3> {/* Title truncation set to 8 words */}
+        <p className={styles.description}>{truncateText(description, 20)}</p> {/* Description truncation set to 20 words */}
         <span className={styles.source}>{source}</span>
       </div>
     </article>

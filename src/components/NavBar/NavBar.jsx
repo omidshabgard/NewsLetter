@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './NavBar.module.css';
 import { Link, useLocation } from 'react-router-dom';
-import SignIn from '../SignIn/SignIn';
+import SignIn from '..//SignIn/SignIn';
 
 const NavBar = () => {
     const location = useLocation();
