@@ -1,0 +1,198 @@
+.navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  font-family: "Roboto" !important;
+  border-bottom: 0.5px solid white;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.navLinks {
+  margin-bottom: -28px;
+  display: flex;
+  gap: 19px;
+  align-items: center;
+}
+
+.active {
+  color: white;
+}
+
+.inactive {
+  color: black;
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  padding-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.navLink.active {
+  font-weight: 700;
+  border-bottom: 3px solid white;
+  color: white;
+}
+
+.signInButton {
+  margin-bottom: 28px;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  background: transparent;
+  padding: 13px 52px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popupContent {
+  background-color: transparent;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.popupClose {
+  position: absolute;
+  top: 16px;
+  right: 48px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.popupOverlay.active {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  
+  .navLinks {
+    display: none;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    background: black;
+    width: auto;
+    padding: 20px;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .navigation.home.menuOpen {
+    background: black; 
+}
+
+.popupContent{
+  padding: 0px;
+}
+.popupClose{
+  top: -29px;
+  right: 2px;
+}
+  .navLinks.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  .navigation.saved-articles .hamburger span {
+    background-color: black;
+  }
+
+  .signInButton {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    margin-top: 10px;
+  }
+ 
+  .navigation.saved-articles .navLink {
+    color: black;
+  }
+
+  .navigation.saved-articles .navLinks {
+    background: white;
+  }
+
+  .navLink {
+    border-bottom: none !important;
+    padding-bottom: 0px;
+  }
+}
+
+.navigation.home {
+  background: transparent;
+}
+
+.navigation.saved-articles {
+  background: white;
+  border-bottom: 1px solid black;
+}
+
+.navigation.home .navLink,
+.navigation.home .signInButton {
+  color: white;
+  border-color: white;
+}
+
+.navigation.saved-articles .navLink,
+.navigation.saved-articles .signInButton {
+  color: black;
+  border-color: black;
+}
